@@ -19,13 +19,17 @@ export async function getStaticProps() {
 
 export default function Home({profiles}) {
   return (
-    <div className={styles.container}>
-      <h1>Perfis</h1>
-      <ul>
-        {profiles.map((profile) => (
-          <li key={profile.id}>{profile.id}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className={styles.title}>
+        <h1>Perfis</h1>
+      </div>
+      <div className={styles.profile_container}>
+        <ul>
+          {profiles.map((profile) => (
+            <li key={profile.id}>{profile.id}</li>
+          ))}
+        </ul>
+      </div>
+    </>
   )
 }
