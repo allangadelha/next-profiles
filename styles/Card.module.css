@@ -10,7 +10,7 @@
     justify-content: center;
     margin-bottom: 2em;
     padding: 2em 1em;
-    min-width: 33%;
+    min-width: 23%;
 }
 
 .card .name {
@@ -43,4 +43,28 @@
 .card .btn:hover {
     background-color: #005CAA;
     color: #FFFFFF;
+}
+
+.Github svg {
+    color: #000000;
+    height: 50px;
+    width: 50px;
+}
+
+.Facebook svg {
+    color: #087AEA;
+    height: 50px;
+    width: 50px;
+}
+
+.Instagram svg{
+    color: #bc1888;
+    height: 50px;
+    width: 50px;
+}
+
+.LinkedIn svg {
+    color: #0966C2;
+    height: 50px;
+    width: 50px;
 }
