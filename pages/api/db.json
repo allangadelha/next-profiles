@@ -2,16 +2,19 @@
     "profiles":[
         {
             "id": 1,
+            "name": "Allan Gadelha",
             "social_network": "Facebook",
             "link": "https://www.facebook.com/allan.gadelhaxavier"
         },
         {
             "id": 2,
+            "name": "Allan Gadelha",
             "social_network": "Instagram",
             "link": "https://www.instagram.com/allangadelhaxavier"
         },
         {
             "id": 3,
+            "name": "Allan Gadelha",
             "social_network": "LinkedIn",
             "link": "https://www.linkedin.com/in/allan-gadelha-xavier-1659b428"
         }

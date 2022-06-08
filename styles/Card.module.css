@@ -1,0 +1,46 @@
+.card {
+    align-items: center;
+    background-color: rgba(0, 92, 170, 0.05);
+    border: 2px solid #005CAA;
+    border-radius: 1em;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
+    color: #1073C7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2em;
+    padding: 2em 1em;
+    min-width: 33%;
+}
+
+.card .name {
+    align-items: center;
+    border-radius: 5px;
+    color: #1073C7;
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+    padding: 5px;
+}
+
+.card .title {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    text-transform: capitalize;
+}
+
+.card .btn {
+    background-color: #FFFFFF;
+    border: 1px solid #005CAA;
+    border-radius: 5px;
+    color: #005CAA;
+    font-weight: bold;
+    padding: .7em 1.2em;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.card .btn:hover {
+    background-color: #005CAA;
+    color: #FFFFFF;
+}
