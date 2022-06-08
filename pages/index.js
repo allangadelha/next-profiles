@@ -1,3 +1,4 @@
+import Card from '../components/Card';
 import styles from '../styles/Home.module.css'
 
 export async function getStaticProps() {
@@ -21,14 +22,12 @@ export default function Home({profiles}) {
   return (
     <>
       <div className={styles.title}>
-        <h1>Perfis</h1>
+        <h1>Perfis | {profiles[0].name}</h1>
       </div>
       <div className={styles.profile_container}>
-        <ul>
           {profiles.map((profile) => (
-            <li key={profile.id}>{profile.id}</li>
+            <Card key={profile.id} profile={profile}/>
           ))}
-        </ul>
       </div>
     </>
   )
