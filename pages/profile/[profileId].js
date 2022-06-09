@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { QRCodeSVG } from 'qrcode.react';
 
 import styles from '../../styles/Profile.module.css';
 
@@ -61,6 +61,10 @@ export default function Profile({ profile }) {
                 </Link>
             </p>
             <p><Link href={profile.link}><a>Clique aqui para acessar</a></Link></p>
+            <div className={styles.qrcode}>
+                <p>Ou leia o QRcode</p>
+                <QRCodeSVG value={profile.link} width="110" height="110" />
+            </div>
             <div className={styles.data_container}>
                 <Link href="/">
                     <a className={styles.btn}>Voltar ao início</a>

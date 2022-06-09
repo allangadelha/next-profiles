@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import {QRCodeSVG} from 'qrcode.react';
 
 import styles from '../styles/Card.module.css';
+
+const baseUrl = "http://localhost:3000";
 
 export function iconSocialNetwork(social_network){
     if(social_network == 'Facebook'){
@@ -28,6 +31,9 @@ export default function Card({profile}) {
             <Link href={`/profile/${profile.id}`}>
                 <a className={styles.btn}>Detalhes</a>
             </Link>
+            <div className={styles.qrcode}>
+                <QRCodeSVG value={`${baseUrl}/profile/${profile.id}`} width="110" height="110"/>
+            </div>
         </div>
     )
 }
