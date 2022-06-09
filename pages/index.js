@@ -1,4 +1,4 @@
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 
 import Card from '../components/Card';
 import styles from '../styles/Home.module.css'
@@ -9,8 +9,6 @@ export async function getStaticProps() {
 
   const res = await fetch(`${api}`);
   const data = await res.json();
-
-  console.log(data);
 
   return {
     props: {
@@ -35,7 +33,8 @@ export default function Home({profiles}) {
         <CSVLink
           data={profiles}
           className={styles.btn_csv}
-          filename={`allangadelha.csv`}
+          filename="allangadelha.csv"
+          target="_blank"
         >Ver perfis em CSV!</CSVLink>
       </div>
     </>
