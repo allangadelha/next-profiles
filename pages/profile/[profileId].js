@@ -4,14 +4,14 @@ import { QRCodeSVG } from 'qrcode.react';
 
 import styles from '../../styles/Profile.module.css';
 
+import dataProfiles from '../../db.json';
+
 export async function getStaticPaths() {
 
-    const api = 'http://localhost:4000/profiles';
+    const profiles = dataProfiles.profiles;    
 
-    const res = await fetch(`${api}`);
-    const data = await res.json();
 
-    const paths = data.map((profile, index) => {
+    const paths = profiles.map((profile, index) => {
 
         return {
             params: { profileId: (index + 1).toString() }
@@ -22,21 +22,18 @@ export async function getStaticPaths() {
         paths,
         fallback: false
     }
-
 }
 
 
-export async function getStaticProps(context) {
+export function getStaticProps(context) {
     
-    const id = context.params.profileId;
-    
-    const api = 'http://localhost:4000/profiles';
-    const res = await fetch(`${api}/${id}`);
-    const data = await res.json();
+    const id = context.params.profileId - 1;
+
+    const profiles = dataProfiles.profiles[id]
     
     return {
         props: {
-            profile: data
+            profile: profiles
         }
     }
     
