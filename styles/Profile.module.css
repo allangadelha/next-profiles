@@ -58,3 +58,8 @@
 .profile_container .image {
     margin: 2em;
 }
+
+.profile_container .image a{
+    background-color: #FFFFFF;
+    margin: 2em;
+}
