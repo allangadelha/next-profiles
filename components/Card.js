@@ -3,8 +3,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import {QRCodeSVG} from 'qrcode.react';
 
 import styles from '../styles/Card.module.css';
-
-const baseUrl = "http://localhost:3000";
+import { useRouter } from 'next/router';
 
 export function iconSocialNetwork(social_network){
     if(social_network == 'Facebook'){
@@ -21,7 +20,23 @@ export function iconSocialNetwork(social_network){
     }
 }
 
+export function getStaticProps(context) {
+    
+    const baseUrl = context.params.host;
+
+    console.log("baseUrl: " + baseUrl)
+    
+    return {
+        props: {
+            baseUrl: baseUrl
+        }
+    }
+    
+}
+
 export default function Card({profile}) {
+    
+    const router = useRouter();
 
     return (
         <div className={styles.card}>
@@ -32,7 +47,7 @@ export default function Card({profile}) {
                 <a className={styles.btn}>Detalhes</a>
             </Link>
             <div className={styles.qrcode}>
-                <QRCodeSVG value={`${baseUrl}/profile/${profile.id}`} width="110" height="110"/>
+                <QRCodeSVG value={`${router.basePath}/profile/${profile.id}`} width="110" height="110"/>
             </div>
         </div>
     )
